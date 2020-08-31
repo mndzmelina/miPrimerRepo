@@ -1,0 +1,77 @@
+
+
+.contenedor_login {
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 5px rgb(70, 75, 136);
+    margin: auto;
+    width: 350px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(../img/typing.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+.titulo_login {
+    color: #308bb6;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+.imagen_login {
+    padding-top: 20px;
+    width: 250px;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.login_formulario {
+    display: flex;
+	flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+input[type=text]:focus, [type=password]:focus {
+	border-color: #051e8a;
+    background-color: #EFEFEF; 
+    opacity: 0.8;
+}
+.boton_submit {
+    background-color: #044e6b;
+    opacity: 0.8;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.boton_submit:hover {
+    background-color: #cadbe6; 
+    color: #022431;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.recuperar_contraseña {
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: #ffffff;
+    text-align: center;
+    font-size: 13px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+.recuperar_contraseña:hover {
+	color: #141414;
+}
