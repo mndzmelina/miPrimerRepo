@@ -4,13 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/css_login1.css">
-    <script>
-
-        function openWindow() {
-            window.open("file:///C:/Users/HP/Desktop/JAP(Fase%202)/Obligatorio%20JAP/miPrimerRepo/index.html");
-        }
-
-    </script>
 
     <script src="milogin.js"></script>
 
@@ -22,13 +15,13 @@
         <img class="imagen_login" src="img/miLogin.png" alt="Ícono de Login">
         <h2 class="titulo_login">ACCESO</h2>
 
-        <form class="login_formulario">
+        <div class="login_formulario">
             <input type="text" placeholder="Nombre de usuario" autofocus id="usuario" required>
             <input type="password" placeholder="Contraseña" id="contraseña" required>
-            <input class="boton_submit" type="submit" value="INGRESAR" id="ingresar" onclick="openWindow()" />
+            <input class="boton_submit" type="button" value="INGRESAR" id="ingresar" onclick="chequeoUsuario()">
 
             <a class="recuperar_contraseña" href="">Olvidé mi contraseña</a>
-        </form>
+        </div>
     </div>
 
     <script src="milogin.js"></script>

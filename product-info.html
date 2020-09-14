@@ -13,6 +13,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/product-info.css">
 </head>
 
 <body>
@@ -25,15 +26,108 @@
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega:
-        20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+      </div>
+      <h3 id="productName">Chevrolet Onix Joy</h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción:</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+        <dt>Cantidad de productos vendidos:</dt>
+        <dd>
+          <p id="soldCount"></p>
+        </dd>
+        <dt>Costo:</dt>
+        <dd>
+          <p id="cost"></p>
+        </dd>
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+      </dl>
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
+  </main>
+
+
+  <div class="commentList" id="commentList">
+    <div class="text-center p-4">
+      <h5>Comentarios:</h5>
+      <p class="lead">Aquí encontrarás los comentarios del producto seleccionado.</p>
+    </div>
+    <dt>Descripción:</dt>
+    <dd>
+      <p id="description"></p>
+    </dd>
+    <dt>Puntuación:</dt>
+    <dd>
+      <p id="score"></p>
+    </dd>
+    <dt>Usuario:</dt>
+    <dd>
+      <p id="user"></p>
+    </dd>
+    <dt>Fecha y hora:</dt>
+    <dd>
+      <div class="row text-center text-lg-left pt-2" id="dateTime">
+      </div>
+    </dd>
+    </dl>
   </div>
+
+  <br>
+  <br>
+
+
+  <div class="comentario">
+    <h2>Comentarios:</h2>
+    <p>Si lo desea, puede agregar aquí su comentario y valoración.</p>
+    <br>
+
+    <form action="/action_page.php">
+
+      <label for="fname">Nombre:</label><br>
+      <input type="text" id="fname" name="fname" required autofocus><br>
+      <label for="lname">Apellido:</label><br>
+      <input type="text" id="lname" name="lname" required>
+      <br>
+      <div class="rating"> Puntuación:
+        <br>
+        <input type="radio" id="star5" name="rate" value="5" onclick="document.getElementById('valor').innerHTML='5'">
+        <label for="star5" title="text">★</label>
+        <input type="radio" id="star4" name="rate" value="4" onclick="document.getElementById('valor').innerHTML='4'">
+        <label for="star4" title="text">★</label>
+        <input type="radio" id="star3" name="rate" value="3" onclick="document.getElementById('valor').innerHTML='3'">
+        <label for="star3" title="text">★</label>
+        <input type="radio" id="star2" name="rate" value="2" onclick="document.getElementById('valor').innerHTML='2'">
+        <label for="star2" title="text">★</label>
+        <input type="radio" id="star1" name="rate" value="1" onclick="document.getElementById('valor').innerHTML='1'">
+        <label for="star1" title="text">★</label>
+      </div>
+
+      <br>
+
+      <textarea name="message" rows="3" cols="30" placeholder="Escriba un comentario" required></textarea>
+      <br><br>
+      <button type="button" onclick="alert('¡Tu comentario se agregó con éxito!')">Enviar</button>
+      <input type="reset">
+
+    </form>
+  </div>
+
+  <br>
+
+
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">

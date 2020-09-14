@@ -1,0 +1,45 @@
+*{
+    text-align: left;
+    font-family: 'Raleway', serif !important;
+}
+
+h2{
+    padding: 0px;
+}
+
+
+input[type=text]{
+    margin: 0px 0;
+    background-color:burlywood;
+}
+
+textarea{
+    resize: horizontal;
+    background-color: burlywood;
+}
+
+.comentario{
+    display: block;
+
+}
+
+.rating {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+
+    }
+    .rating input {
+    position: absolute;
+    top: -100px;
+    }
+    .rating label {
+    float: right;
+    color: #c1b8b8;
+    font-size: 30px; 
+    }
+    .rating label:hover,
+    .rating label:hover ~ label,
+    .rating input:checked ~ label {
+    color:orange;
+    }
