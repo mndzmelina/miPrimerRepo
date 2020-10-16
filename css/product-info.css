@@ -3,19 +3,20 @@
     font-family: 'Raleway', serif !important;
 }
 
-h2{
+
+h2 {
     padding: 0px;
 }
 
 
 input[type=text]{
     margin: 0px 0;
-    background-color:burlywood;
+    background-color:  rgb(165, 162, 162);
 }
 
 textarea{
     resize: horizontal;
-    background-color: burlywood;
+    background-color: rgb(165, 162, 162);
 }
 
 .comentario{
@@ -41,5 +42,11 @@ textarea{
     .rating label:hover,
     .rating label:hover ~ label,
     .rating input:checked ~ label {
-    color:orange;
+    color:rgb(197, 159, 32);
     }
+
+    .carousel-item > img {
+        border: 5px solid grey;
+        border-radius: 10px;
+      }
+    

@@ -6,14 +6,11 @@ html {
     
 }
 .contenedor_login {
-    justify-self: right;
     box-shadow: 0 0 5px 5px rgb(180, 30, 75);
-    margin: auto;
+    float: right;
     width: 350px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: right;
+    
     
 }
 
@@ -61,7 +58,7 @@ input[type=text]:focus, [type=password]:focus {
 .recuperar_contraseña {
     font-size: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	color: #ffffff;
+	color: #ce0975;
     text-align: center;
     font-size: 13px;
     padding-bottom: 20px;
@@ -71,3 +68,4 @@ input[type=text]:focus, [type=password]:focus {
 .recuperar_contraseña:hover {
 	color: #141414;
 }
+

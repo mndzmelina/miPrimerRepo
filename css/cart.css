@@ -1,0 +1,27 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h5{
+    font-size: 50px;
+    text-align: center;
+    color: rgb(252, 248, 248);
+    background-color: darkslategray;
+    font-family: 'Courier New', Courier, monospace
+}
+.montos {
+    padding-top: 80px;
+}
+
+.col-sm-6{
+    padding-top: 40px;
+    padding-bottom: 50px;  
+}
+#article{
+    align-content: space-between;
+    color: darkgrey;
+    padding-top: 30px;
+}
+
+h4{
+    color:  darkslategray;
+}

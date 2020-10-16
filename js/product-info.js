@@ -18,32 +18,6 @@ function showImagesGallery(array) {
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     }
 }
-
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function (e) {
-    getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
-        if (resultObj.status === "ok") {
-            product = resultObj.data;
-
-            let productNameHTML = document.getElementById("productName");
-            let productDescriptionHTML = document.getElementById("productDescription");
-            let soldCountHTML = document.getElementById("soldCount");
-            let costHTML = document.getElementById("cost");
-
-            productNameHTML.innerHTML = product.name;
-            productDescriptionHTML.innerHTML = product.description;
-            soldCountHTML.innerHTML = product.soldCount;
-            costHTML.innerHTML = product.cost;
-
-            //Muestro las imagenes en forma de galería
-            showImagesGallery(product.images);
-        }
-    });
-});
-
-
 //comentarios
 
 var comment = [];
@@ -73,21 +47,43 @@ function showCommentList() {
     }
 }
 
-/*function enviarComentario() {
-    var description = document.getElementById("description").value;
-    var score = document.getElementById("score").value;
-    var user = document.getElementById("user").value;
+/*//Función para agregar comentario
+function publicarComentario(comentario){
+comentario.user = localStorage.getItem("usuario");
+comentario.description = document.getElementById("comentario").value;
+    comments.push(comentario);
 
-    comment.push(comment)
-    showCommentList();
+    showComments(comments);
+
 }
 */
+
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
+    getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
+        if (resultObj.status === "ok") {
+            product = resultObj.data;
+
+            let productNameHTML = document.getElementById("productName");
+            let productDescriptionHTML = document.getElementById("productDescription");
+            let soldCountHTML = document.getElementById("soldCount");
+            let costHTML = document.getElementById("cost");
+            let relatedProductsHTML = document.getElementById("relatedProducts");
+
+            productNameHTML.innerHTML = product.name;
+            productDescriptionHTML.innerHTML = product.description;
+            soldCountHTML.innerHTML = product.soldCount;
+            costHTML.innerHTML = product.cost;
+            relatedProductsHTML.innerHTML = product.relatedProducts;
+
+            //Muestro las imagenes en forma de galería
+            showImagesGallery(product.images);
+        }
+    });
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             comment = resultObj.data;

@@ -31,6 +31,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/cart.css">
 </head>
 
 <body>
@@ -41,16 +42,141 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-none d-md-inline-block" href="#" id="user"> </a>
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+        <div id="perfil"></div>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="my-profile.html" onclick="">Mi perfil <svg width="1em" height="1em"
+              viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+            </svg></a></li>
+        <li><a id="carritoBadge" class="dropdown-item" href="cart.html" onclick="">Carrito <svg width="1em" height="1em"
+              viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+            </svg></a></li>
+        <li><a class="dropdown-item" href="index.html" onclick="logout()">Cerrar sesión</a></li>
+      </ul>
+    </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega:
-        25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+
+  <!--Section: Articulos-->
+  <section>
+    <div class="container"></div>
+
+
+    <h5 class="comun">MI CARRITO</h5>
+
+    <div>
+      <div id="article">
+        <!--<h5 id="articleName"></h5>
+ <p class="mb-2 text-muted text-uppercase small">Cantidad: <span id="articleCount"></span></p>
+ <p class="mb-3 text-muted text-uppercase small">Costo Unitario: <span id="articleUnitCost"></span>
+ </p>
+ <p class="mb-3 text-muted text-uppercase small">Moneda:<span id="articleCurrency"></span></p>
+ <p class="mb-3 text-muted text-uppercase small">Foto:<span id="articleImagen"></span></p>-->
+      </div>
+
+
+
+
+      <!-- Montos -->
+      <div class="col-sm-6">
+        <h4 class="montos">Monto total de:</h4>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+            Subtotal:
+            <span>$ </span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+            Envío:
+            <span>Gratis</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+            <div>
+              <strong>Total</strong>
+            </div>
+            <span><strong>$ </strong></span>
+          </li>
+        </ul>
+
+        <br>
+
+        <!-- Envíos -->
+        <h4 class="col-sm-6">Métodos de envío:</h4>
+        <div class="row">
+          <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list"
+                href="#list-home" role="tab" aria-controls="home">STANDARD</a>
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                href="#list-profile" role="tab" aria-controls="profile">EXPRESS</a>
+              <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
+                href="#list-messages" role="tab" aria-controls="messages">PREMIUM</a>
+
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                Demora:
+                20 días hábiles - Costo (Gratuito)</div>
+              <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                Demora:
+                7 días hábiles - Costo (+5%)
+              </div>
+              <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                Demora:
+                3 días hábiles - Costo (+7%)
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Card -->
+          <div class="col-sm-6">
+            <div class="pt-4">
+
+              <h4 class="mb-4">Medios de pago <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wallet"
+                  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z" />
+                </svg></h4>
+
+              <img class="mr-2" width="45px"
+                src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                alt="Visa">
+              <img class="mr-2" width="45px"
+                src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                alt="American Express">
+              <img class="mr-2" width="45px"
+                src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                alt="Mastercard">
+              <img class="mr-2" width="45px"
+                src="https://mdbootstrap.com/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.png"
+                alt="PayPal acceptance mark">
+            </div>
+          </div>
+          <!-- Card -->
+
+          <button type="button" class="btn btn-primary btn-block">Proceder al pago</button>
+
+        </div>
+      </div>
     </div>
+  </section>
+
+
+
+
+
+
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
@@ -65,6 +191,7 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+  <script>document.getElementById("user").innerHTML = "Bienvenido: " + localStorage.getItem("usuario"); </script>
 </body>
 
 </html>

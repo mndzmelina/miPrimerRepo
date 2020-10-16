@@ -24,6 +24,25 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-none d-md-inline-block" href="my-profile.html"> </a>
+      <a class="py-2 d-none d-md-inline-block" href="#" id="persona"> </a>
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+        <div id="perfil"></div>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="my-profile.html" onclick="">Mi perfil <svg width="1em" height="1em"
+              viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+            </svg></a></li>
+        <li><a class="dropdown-item" href="cart.html" onclick="">Carrito <svg width="1em" height="1em"
+              viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+            </svg></a></li>
+        <li><a class="dropdown-item" href="index.html" onclick="logout()">Cerrar sesión</a></li>
+      </ul>
+    </div>
     </div>
   </nav>
 
@@ -48,21 +67,49 @@
         <dd>
           <p id="cost"></p>
         </dd>
+
         <dt>Imágenes ilustrativas</dt>
         <dd>
-          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="img/prod1.jpg" alt="Primera diapositiva">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="img/prod2.jpg" alt="Segunda diapositiva">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="img/prod3.jpg" alt="Tercera diapositiva">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="img/prod4.jpg" alt="Cuarta diapositiva">
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Siguiente</span>
+            </a>
           </div>
+          <br>
+        </dd>
+        <dt>Productos relacionados</dt>
+        <dd>
+          <p id="relatedProducts"></p>
         </dd>
       </dl>
-      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
-    </div>
-  </main>
 
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Volver al listado de productos</a>
+    </div>
+    <br>
+  </main>
 
   <div class="commentList" id="commentList">
     <div class="text-center p-4">
       <h5>Comentarios:</h5>
-      <p class="lead">Aquí encontrarás los comentarios del producto seleccionado.</p>
     </div>
     <dt>Descripción:</dt>
     <dd>
@@ -149,6 +196,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script>document.getElementById("persona").innerHTML = "Bienvenido: " + localStorage.getItem("usuario"); </script>
 </body>
 
 </html>

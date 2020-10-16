@@ -8,7 +8,7 @@ boton.addEventListener("click", chequeoUsuario, false);*/
 
 //Defino funcion chequeUsuario para corroborar primero datos correctos de credenciales
 function chequeoUsuario() {
-    alert("Cliqueaste ingresar");
+    alert("Iniciaste sesion");
     var usuario = document.getElementById("usuario").value;
     var contraseña = document.getElementById("contrasena").value;
 
